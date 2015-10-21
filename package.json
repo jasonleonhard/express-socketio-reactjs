@@ -1,0 +1,24 @@
+{
+  "name": "express-socketio-reactjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app-server.js",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/un5t0ppab13/express-socketio-reactjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/un5t0ppab13/express-socketio-reactjs/issues"
+  },
+  "homepage": "https://github.com/un5t0ppab13/express-socketio-reactjs#readme"
+}

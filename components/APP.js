@@ -8,15 +8,32 @@ var Header = require('./parts/Header');
 // aka when connected, we use connect function here
 var APP = React.createClass({
 
+  //
+  getInitialState() {
+      return {
+          status: 'disconnected'
+      }
+  },
+
+  // right before mounting a component these listners call handlers
+    // handlers are: connect, disconnect...
   componentWillMount(){
     this.socket = io('http://localhost:3000');
     this.socket.on('connect', this.connect);
+    this.socket.on('disconnect', this.disconnect);
   },
 
+  // handler
   connect() {
     alert("Connected: " + this.socket.id);
   },
 
+  // handler
+  disconnect() {
+    alert("Disonnected: " + this.socket.id);
+  },
+
+  // always required. renders a returned html element or more
   render() {
     return (<h1> Hello World form React </h1>);
 	}

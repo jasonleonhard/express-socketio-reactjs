@@ -20443,15 +20443,32 @@
 	var APP = React.createClass({
 	  displayName: 'APP',
 
+	  //
+	  getInitialState: function getInitialState() {
+	    return {
+	      status: 'disconnected'
+	    };
+	  },
+
+	  // right before mounting a component these listners call handlers
+	  // handlers are: connect, disconnect...
 	  componentWillMount: function componentWillMount() {
 	    this.socket = io('http://localhost:3000');
 	    this.socket.on('connect', this.connect);
+	    this.socket.on('disconnect', this.disconnect);
 	  },
 
+	  // handler
 	  connect: function connect() {
 	    alert("Connected: " + this.socket.id);
 	  },
 
+	  // handler
+	  disconnect: function disconnect() {
+	    alert("Disconnected: " + this.socket.id);
+	  },
+
+	  // always required. renders a returned html element or more
 	  render: function render() {
 	    return React.createElement(
 	      'h1',

@@ -24,12 +24,12 @@ io.sockets.on('connection', function (socket) {
     socket.once('disconnect', function () {
         connections.splice(connections.indexOf(socket), 1);
         socket.disconnect();
-        console.log("Disconencted: %s socket.id:", socket.id);
+        console.log("Disconencted: %s socket.id", socket.id);
         console.log("Disconencted: %s sockets remaining.", connections.length);
     });
 
     connections.push(socket);
-    console.log("Connected: %s socket.id:", socket.id);
+    console.log("Connected: %s socket.id", socket.id);
     console.log("Connected: %s sockets remaining.", connections.length);
 
 }); 

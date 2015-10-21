@@ -28,7 +28,7 @@ var APP = React.createClass({
     alert("Connected: " + this.socket.id);
   },
 
-  // handler
+  // handler, will be sent to Header.js...
   disconnect() {
     alert("Disonnected: " + this.socket.id);
   },

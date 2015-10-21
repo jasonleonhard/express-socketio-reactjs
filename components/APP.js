@@ -25,12 +25,12 @@ var APP = React.createClass({
 
   // handler
   connect() {
-    alert("Connected: " + this.socket.id);
+    alert("Connected: " + this.socket.id + "#: " + this.socket.length; );
   },
 
   // handler
   disconnect() {
-    alert("Disonnected: " + this.socket.id);
+    alert("Disonnected: " + this.socket.id + "#: " + this.socket.length; );
   },
 
   // always required. renders a returned html element or more

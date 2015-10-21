@@ -16,20 +16,21 @@ var server = app.listen(3000);
 var io = require('socket.io').listen(server);
 
 // when socket connects the event listener/handler with callback function taking in port 3000
-  // when new sockets connect log id
-  // on disconnect we callback function the connections array and splice|remove out that index, by comparing socket variables
+// when new sockets connect log id
+// once means fire a disconnect handler when connected.
+// on disconnect we callback function the connections array and splice|remove 1 out that index, by comparing socket variables
 io.sockets.on('connection', function (socket) {
     
     socket.once('disconnect', function () {
         connections.splice(connections.indexOf(socket), 1);
         socket.disconnect();
         console.log("Disconencted: %s socket.id:", socket.id);
-        console.log("Disconencted: %s. Sockets remaining.", connections.length);
+        console.log("Disconencted: %s sockets remaining.", connections.length);
     });
 
     connections.push(socket);
     console.log("Connected: %s socket.id:", socket.id);
-    console.log("Connected: %s socket:", connections.length);
+    console.log("Connected: %s sockets remaining.", connections.length);
 
 }); 
 

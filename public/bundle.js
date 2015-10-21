@@ -20435,11 +20435,11 @@
 
 	var React = __webpack_require__(1);
 	var io = __webpack_require__(158);
+	var Header = __webpack_require__(208);
 
 	// APP.js main component, render is a must renders <APP />,
 	// componentWillMount adds a socket and a listener/event handler for connect event
 	// aka when connected, we use connect function here
-
 	var APP = React.createClass({
 	  displayName: 'APP',
 
@@ -27652,6 +27652,48 @@
 	};
 
 
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// require, create({ propTypes, render()}), and module.export...
+	// propTypes gives title of string and we require it
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Header = React.createClass({
+	  displayName: 'Header',
+
+	  propTypes: {
+	    title: React.PropTypes.string.isRequired
+	  },
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        Header,
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	  // render() {
+	  //   return (
+	  //     <header>
+	  //       <h1>{this.props.title}</h1>
+	  //     </header>
+	  //   );
+	  // }
+
+	});
+
+	//
+	module.exports = Header;
+	// to use see APP.js      var Header = require('./parts/Header');
 
 /***/ }
 /******/ ]);
